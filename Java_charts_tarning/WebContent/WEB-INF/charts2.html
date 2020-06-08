@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <title>Chart.js TEST</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <h1>Chart.jsのテスト</h1>
+
+  <div style="width: 50%">
+    <canvas id="chart" height="450" width="600"></canvas>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+  <!-- もしくは<script src="Chart.min.js"></script> -->
+<script>
+  var doughnutData = [
+      {
+        value: 500,
+        color:"#9bcad0",
+        highlight: "#a7d7de",
+        label: "スマートフォン"
+      },
+      {
+        value: 150,
+        color: "#d5a87f",
+        highlight: "#e4b68a",
+        label: "PC"
+      },
+      {
+        value: 80,
+        color: "#cca9ca",
+        highlight: "#dcb7da",
+        label: "タブレット"
+      },
+      {
+        value: 20,
+        color: "#edef9c",
+        highlight: "#fcfea6",
+        label: "その他デバイス"
+      }
+    ];
+    window.onload = function(){
+      var ctx = document.getElementById("chart").getContext("2d");
+      window.myDoughnut = new Chart(ctx).Doughnut(doughnutData, {
+        responsive : true
+      });
+    }
+</script>
+</body>
+</html>
